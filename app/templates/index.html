@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YOLOv8 Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="hero">
+    <div class="card">
+      <h1> Let's play.. I Spy with My AI 👀 <br>
+        Upload an image! </h1>
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">📷 Detect Objects</button>
+      </form>
+
+      {% if image_url %}
+        <h2>Detected Output:</h2>
+        <img src="{{ image_url }}" alt="Detected Image">
+
+        {% if detections %}
+          <h3>Detected Classes</h3>
+          <table>
+            <tr>
+              <th>Class</th>
+              <th>Confidence</th>
+            </tr>
+            {% for det in detections %}
+            <tr>
+              <td>{{ det['class'] }}</td>
+              <td>{{ det['confidence'] }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+
+          {% elif submitted %}
+          <p><em>No objects detected in the uploaded image.</em></p>
+          {% endif %}
+
+        <br>
+        <a href="{{ image_url }}" download class="download-btn">⬇️ Download Annotated Image</a>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
