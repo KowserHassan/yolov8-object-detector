@@ -2,7 +2,7 @@
 
 Welcome to **"I Spy with My AI"** — a powerful web application that lets you upload an image and detect objects using the YOLOv8 model. This project showcases how modern AI apps can be **containerised**, **orchestrated**, and **deployed securely at scale**.
 
-![alt text](image-1.png)
+![App UI](images/app-ui.png)
 
 ---
 
@@ -19,7 +19,7 @@ Welcome to **"I Spy with My AI"** — a powerful web application that lets you u
 
 ## 🏗️ Architecture Overview
 
-![alt text](image.png)
+![Architecture](images/architecture.png)
 
 ---
 
@@ -38,7 +38,7 @@ Welcome to **"I Spy with My AI"** — a powerful web application that lets you u
 
 ---
 
-## ⚙️ How to Run Locally
+## ⚙️ How to run app locally
 
 ```bash
 git clone https://github.com/your-username/yolov8-object-detector.git  
