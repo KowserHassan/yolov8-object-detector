@@ -20,7 +20,6 @@ module "acm" {
   zone_id     = var.zone_id
 }
 
-# ALB must come before ECS since ECS needs the target group ARN
 module "alb" {
   source            = "./modules/alb"
   alb_name          = var.alb_name
@@ -34,7 +33,6 @@ module "alb" {
   health_check_path = var.health_check_path
 }
 
-# ECS comes after ALB since it needs the target group ARN
 module "ecs" {
   source             = "./modules/ecs"
   cluster_name       = var.ecs_cluster_name
@@ -54,7 +52,6 @@ module "ecs" {
   environment        = var.environment
   project_name       = var.project_name
 
-  # Explicit dependency to ensure ALB listeners are created first
   depends_on = [module.alb]
 }
 
@@ -67,7 +64,6 @@ module "route53" {
   zone_id = var.zone_id
   alb_zone_id   = module.alb.zone_id
 }
-
 
 module "iam" {
   source        = "./modules/iam"
