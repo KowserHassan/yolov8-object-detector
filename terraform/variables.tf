@@ -21,10 +21,10 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-# variable "certificate_arn" {
-#   description = "ACM certificate ARN"
-#   type        = string
-# }
+variable "certificate_arn" {
+  description = "ACM certificate ARN"
+  type        = string
+}
 
 
 variable "public_subnet_cidrs" {

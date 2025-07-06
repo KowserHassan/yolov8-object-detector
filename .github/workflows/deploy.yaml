@@ -40,9 +40,12 @@ jobs:
 
             - name: Terraform Plan
               working-directory: ./terraform
-              run: terraform plan
-
+              run: terraform plan -var-file="terraform.tfvars"
+              env:
+                TF_VAR_certificate_arn: ${{ secrets.CERTIFICATE_ARN }}
 
             - name: Terraform Apply
               working-directory: ./terraform
-              run: terraform apply -auto-approve
+              run: terraform apply -var-file="terraform.tfvars" -auto-approve
+              env:
+                TF_VAR_certificate_arn: ${{ secrets.CERTIFICATE_ARN }}
