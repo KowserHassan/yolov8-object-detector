@@ -33,7 +33,7 @@ Welcome to **"I Spy with My AI"** — a powerful web application that lets you u
 | Containerisation | Docker                                                 |
 | IaC              | Terraform                                              |
 | Orchestration    | AWS ECS (Fargate)                                      |
-| Networking       | ALB, VPC, Route 53, ACM, NAT Gateway                   |
+| Networking       | ALB, VPC, Route 53, ACM                                |
 | CI/CD            | GitHub Actions                                         |
 
 ---
